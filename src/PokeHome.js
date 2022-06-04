@@ -1,5 +1,3 @@
-// import useFetch from './useFetch'
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import axiosFetch from './useFetch'
@@ -23,22 +21,10 @@ const PokeHome = (currentinput) => {
 
     },[])
 
-
-    // useEffect(() =>{
-    //     const fetchData = async() => {
-    //         // const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`).then(data => data.json())
-    //         // console.log(data)
-    //     }
-    //     fetchData()
-    //     .catch(console.error)
-    // }, [currentinput])
-    // const x = rpoke.map(poke => console.log(poke))
-    
-    console.log(rpoke)
     return ( 
         <div className="pokemonpage">
             {rpoke.map((pokemon => {
-                return <div className="poke-preview" key = {pokemon.id}>
+                return <div className="poke-preview">
                     <div className="pokename">
                         <p className="pokename">{pokemon.id}</p>
                         <p className="pokename">{pokemon.name}</p>

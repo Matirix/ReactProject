@@ -73,8 +73,6 @@ code {
   display: flex;
   justify-content: space-between;
   margin: 0px;
-
-  /* text-align: center; */
 }
 .poke-preview {
   display: flex;
@@ -82,4 +80,13 @@ code {
   border-radius: 0.5rem;
   padding: 10px;
   background-color: #be93d4;
+}
+
+/* Poke Search */
+.pokemonfield {
+  display: flex;
+  text-align: center;
+  margin: 10px;
+  gap: 10px;
+  padding: 10px;
 }

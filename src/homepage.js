@@ -4,13 +4,10 @@ import PokeHome from './PokeHome'
 import Pokesearch from "./pokesearch";
 
 const Home = () => {
-    const [currentinput, setInput] = useState(1);
 
     return (
     <div className="home">
-        <label htmlFor="search">Search Pokemon Here!</label>
-        <input type="text" id="textsearch" onChange={(e) => setInput(e.target.value)}/>
-        <Pokesearch currentinput={parseInt(currentinput)}/>
+        <Pokesearch/>
         <hr></hr>
         <PokeHome/>
     </div>  );
