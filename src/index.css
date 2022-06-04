@@ -59,3 +59,27 @@ code {
   color:#be93d4;
   margin-bottom: 8px;
 }
+
+/* Random Poke Page */
+
+.pokemonpage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  gap: 10px;
+  width: 100%;
+}
+.pokename {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+
+  /* text-align: center; */
+}
+.poke-preview {
+  display: flex;
+  flex-flow: column wrap;
+  border-radius: 0.5rem;
+  padding: 10px;
+  background-color: #be93d4;
+}

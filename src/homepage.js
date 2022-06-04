@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BlogList from './bloglist';
 import PokeHome from './PokeHome'
+import Pokesearch from "./pokesearch";
 
 const Home = () => {
     const [currentinput, setInput] = useState(1);
@@ -9,7 +10,9 @@ const Home = () => {
     <div className="home">
         <label htmlFor="search">Search Pokemon Here!</label>
         <input type="text" id="textsearch" onChange={(e) => setInput(e.target.value)}/>
-        <PokeHome currentinput={parseInt(currentinput)}/>
+        <Pokesearch currentinput={parseInt(currentinput)}/>
+        <hr></hr>
+        <PokeHome/>
     </div>  );
 }
  
