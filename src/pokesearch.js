@@ -2,10 +2,12 @@ import { useState, useEffect, useRef} from "react";
 import { Link } from 'react-router-dom';
 
 
-const Pokesearch = () => {
+const Pokesearch = (props) => {
     const [currentinput, setInput] = useState(null);
     const [pokemon, setpokemon] = useState(null);
     const poketext = useRef(null);
+    const backgrounds = props.backgrounds
+    const defaultBackground = props.defaultBackground
 
 
     useEffect(() => {
@@ -32,7 +34,7 @@ const Pokesearch = () => {
                 <button onClick={pokeSubmit} className="pokesubmit">Search!</button>
             </div>
             <div className="pokemonpage">
-            {pokemon && <div className="poke-preview">
+            {pokemon && <div className="poke-preview" style={{backgroundImage: `linear-gradient(${backgrounds[pokemon.types[0].type.name]}, white)` || defaultBackground }}>
                 <Link to={`/pokemon/${pokemon.id}`}>
                         <div className="pokename">
                         <p className="pokename">{pokemon.id}</p>

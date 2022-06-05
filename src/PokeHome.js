@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import axiosFetch from './useFetch'
 
-const PokeHome = (currentinput) => {
+const PokeHome = (props) => {
     const numbers = Array.from({length: 9}, () => Math.floor(Math.random() * 880));
     const [rpoke, setrpoke] = useState([])
     const randompoke = [];
+    const backgrounds = props.backgrounds
+    const defaultBackground = props.defaultBackground
 
     useEffect(() => {
         const randompokemons = async() => {
@@ -18,11 +20,11 @@ const PokeHome = (currentinput) => {
         randompokemons()
         .catch(console.error)
     },[])
-
+    
     return ( 
         <div className="pokemonpage">
             {rpoke.map((pokemon => {
-                return <div className="poke-preview">
+                return <div className="poke-preview" style={{backgroundImage: `linear-gradient(${backgrounds[pokemon.types[0].type.name]}, white)` || defaultBackground }}>
                 <Link to={`/pokemon/${pokemon.id}`}>
 
                     <div className="pokename">

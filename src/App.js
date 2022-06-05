@@ -1,5 +1,6 @@
 import Navbar from './navbar'
 import Home from './homepage'
+import Footer from './footer';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import PokeDetails from './pokeDetails';
 
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path='/pokemon/:pid' element={<PokeDetails />}></Route>
           </Routes>
+          <Footer/>
         </Router>
 
 
