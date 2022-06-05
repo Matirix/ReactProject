@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef} from "react";
+import { Link } from 'react-router-dom';
+
 
 const Pokesearch = () => {
     const [currentinput, setInput] = useState(null);
@@ -11,7 +13,6 @@ const Pokesearch = () => {
             console.log(currentinput)
             const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentinput}`).then(data => data.json());
             setpokemon(poke)
-            console.log(pokemon)
         }
         pokeinput()
         .catch(`RUH ROH`)
@@ -32,13 +33,15 @@ const Pokesearch = () => {
             </div>
             <div className="pokemonpage">
             {pokemon && <div className="poke-preview">
-                    <div className="pokename">
+                <Link to={`/pokemon/${pokemon.id}`}>
+                        <div className="pokename">
                         <p className="pokename">{pokemon.id}</p>
                         <p className="pokename">{pokemon.name}</p>
                     </div>
                     <div className="img-container">
                         <img src={pokemon.sprites.other["official-artwork"].front_default} width="100%" alt="" />
                     </div>
+                </Link>
             </div>}
 
             </div>

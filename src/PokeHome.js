@@ -4,10 +4,9 @@ import axiosFetch from './useFetch'
 
 const PokeHome = (currentinput) => {
     const numbers = Array.from({length: 9}, () => Math.floor(Math.random() * 880));
-    const [pokemon, setPokemon] = useState('https://pokeapi.co/api/v2/pokemon/1');
     const [rpoke, setrpoke] = useState([])
-    const pokeinput = currentinput.currentinput
     const randompoke = [];
+
     useEffect(() => {
         const randompokemons = async() => {
             for (const p of numbers) {
@@ -18,13 +17,14 @@ const PokeHome = (currentinput) => {
         }
         randompokemons()
         .catch(console.error)
-
     },[])
 
     return ( 
         <div className="pokemonpage">
             {rpoke.map((pokemon => {
                 return <div className="poke-preview">
+                <Link to={`/pokemon/${pokemon.id}`}>
+
                     <div className="pokename">
                         <p className="pokename">{pokemon.id}</p>
                         <p className="pokename">{pokemon.name}</p>
@@ -33,7 +33,7 @@ const PokeHome = (currentinput) => {
                         <img src={pokemon.sprites.other["official-artwork"].front_default} width="100%"alt="" />
                         
                     </div>
-
+                </Link>
                 </div>
             }))}
         </div>

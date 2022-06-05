@@ -1,7 +1,7 @@
 import Navbar from './navbar'
 import Home from './homepage'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-
+import PokeDetails from './pokeDetails';
 
 function App() {
   const title = 'Welcome to my new blog';
@@ -13,6 +13,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path='/pokemon/:pid' element={<PokeDetails />}></Route>
           </Routes>
         </Router>
 

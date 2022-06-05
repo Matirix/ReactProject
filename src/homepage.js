@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import BlogList from './bloglist';
 import PokeHome from './PokeHome'
 import Pokesearch from "./pokesearch";
 

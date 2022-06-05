@@ -5,8 +5,6 @@ const Navbar = () => {
             <h1>Pokeuisine</h1>
             <div className="links">
                 <Link to="/"> Home </Link>
-
-
             </div>
         </nav>
      );
