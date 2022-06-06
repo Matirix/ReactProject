@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import PokeDetails from './pokeDetails';
 
 function App() {
-  const title = 'Welcome to my new blog';
-
   return (
     <div className="App">
       <div className="content">

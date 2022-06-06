@@ -57,13 +57,18 @@ code {
 
 /* Random Poke Page */
 
-
+.refresh {
+  margin-bottom: 5px;
+  padding: 3px;
+  float: right;
+}
 .pokemonpage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   position: relative;
   gap: 10px;
   width: 100%;
+  /* width: clamp(200px, 100%, 600px); */
 }
 .pokename {
   display: flex;

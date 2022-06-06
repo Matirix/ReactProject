@@ -5,6 +5,7 @@ import axiosFetch from './useFetch'
 const PokeHome = (props) => {
     const numbers = Array.from({length: 9}, () => Math.floor(Math.random() * 880));
     const [rpoke, setrpoke] = useState([])
+    const [refresh, refreshAgain] = useState(false)
     const randompoke = [];
     const backgrounds = props.backgrounds
     const defaultBackground = props.defaultBackground
@@ -19,9 +20,19 @@ const PokeHome = (props) => {
         }
         randompokemons()
         .catch(console.error)
-    },[])
+    },[refresh])
+
+    const handleRefresh = () => {
+        refreshAgain(prevState => ({
+            clicked: !prevState.clicked
+        }))
+    }
+
     
     return ( 
+        <div className="pokebox">
+            <button className="refresh pokesubmit" onClick={handleRefresh}> refresh </button>
+
         <div className="pokemonpage">
             {rpoke.map((pokemon => {
                 return <div className="poke-preview" style={{backgroundImage: `linear-gradient(${backgrounds[pokemon.types[0].type.name]}, white)` || defaultBackground }}>
@@ -39,6 +50,7 @@ const PokeHome = (props) => {
                 </div>
             }))}
         </div>
+    </div>
      );
 }
  
