@@ -45,8 +45,10 @@ const Pokesearch = (props) => {
                     </div>
                 </Link>
             </div>}
+            
 
             </div>
+            {/* <hr /> */}
 
     
         </div>
