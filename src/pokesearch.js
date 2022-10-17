@@ -21,7 +21,7 @@ const Pokesearch = (props) => {
 
     }, [currentinput])
 
-
+    // Prevent crashing when value is erased
     const pokeSubmit = () => {
         (!poketext.current.value.length) ? setInput(1) : setInput(poketext.current.value)
     }
